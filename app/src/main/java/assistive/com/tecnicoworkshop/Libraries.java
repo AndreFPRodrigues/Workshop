@@ -37,9 +37,7 @@ public class Libraries extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 backgroundRandom.setDrawingCacheEnabled(true);
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.setType("image/*");
+
                 Bitmap bitmap = backgroundRandom.getDrawingCache();
                 File root = Environment.getExternalStorageDirectory();
                 File cachePath = new File(root.getAbsolutePath() + "/DCIM/Camera/image.jpg");
@@ -51,6 +49,10 @@ public class Libraries extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.setType("image/*");
                 sendIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(cachePath));
                 startActivity(Intent.createChooser(sendIntent, "Share via"));
             }

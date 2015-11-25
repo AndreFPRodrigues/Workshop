@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="assistive.com.tecnicoworkshop" >
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -20,7 +21,6 @@
         </activity>
         <activity android:name=".MainMenu" >
         </activity>
-
         <activity
             android:name=".Libraries"
             android:label="@string/title_activity_service_controler"
@@ -30,9 +30,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="assistive.com.tecnicoworkshop.MainMenu" />
         </activity>
-        <activity android:name=".ListExample"
+        <activity
+            android:name=".ListExample"
+            android:parentActivityName=".MainMenu" >
+        </activity>
+        <activity
+            android:name=".Sensors"
+            android:label="@string/title_activity_sensors"
             android:parentActivityName=".MainMenu"
-            >
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="assistive.com.tecnicoworkshop.MainMenu" />
         </activity>
     </application>
 

@@ -36,7 +36,6 @@ public class ListExample extends AppCompatActivity {
             Log.d("ListExample", arrayList.get(position).toString());
             arrayList.remove(position);
             arrayAdapter.notifyDataSetChanged();
-
         }
     };
 

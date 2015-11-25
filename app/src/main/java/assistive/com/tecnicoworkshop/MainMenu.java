@@ -10,7 +10,8 @@ import android.widget.TextView;
 public class MainMenu extends AppCompatActivity {
 
     TextView welcome;
-    Button service;
+    Button library;
+    Button sensor;
     Button lista;
 
     @Override
@@ -28,8 +29,11 @@ public class MainMenu extends AppCompatActivity {
         welcome = (TextView) findViewById(R.id.welcomeMessage);
         welcome.setText("Welcome " + name);
 
-        service = (Button) findViewById(R.id.service);
-        service.setOnClickListener(serviceListener);
+        library = (Button) findViewById(R.id.service);
+        library.setOnClickListener(serviceListener);
+
+        sensor = (Button) findViewById(R.id.sensors);
+        sensor.setOnClickListener(sensorListener);
 
         lista = (Button) findViewById(R.id.lista);
         lista.setOnClickListener(listaListener);
@@ -39,6 +43,14 @@ public class MainMenu extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(getApplicationContext(), Libraries.class);
+            startActivity(intent);
+        }
+    };
+
+    View.OnClickListener sensorListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getApplicationContext(), Sensors.class);
             startActivity(intent);
         }
     };

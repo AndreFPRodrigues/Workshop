@@ -2,4 +2,5 @@
     <string name="app_name">Tecnico Workshop</string>
     <string name="title">Tagus</string>
     <string name="title_activity_service_controler">Libraries</string>
+    <string name="title_activity_sensors">Sensors</string>
 </resources>

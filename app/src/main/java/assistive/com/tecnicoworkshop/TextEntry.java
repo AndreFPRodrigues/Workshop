@@ -1,6 +1,7 @@
 package assistive.com.tecnicoworkshop;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,7 @@ public class TextEntry extends AppCompatActivity {
         //criamos a texview
         TextView addText = new TextView(getApplicationContext());
         addText.setText("Adicionado programaticamente");
+        addText.setTextColor(Color.BLACK);
 
         //adicionamo-la ao llinearlayout
         ll.addView(addText);
